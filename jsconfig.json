@@ -1,8 +1,23 @@
 {
   "compilerOptions": {
-    "moduleResolution": "nodenext",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
     "target": "ES2021",
     "checkJs": true,
-    "allowJs": true
-  }
+    "allowJs": true,
+    "typeRoots": ["./node_modules/@types"],
+    "types": ["node", "estree", "follow-redirects", "formidable"],
+    "skipLibCheck": true,
+    "esModuleInterop": true
+  },
+  "include": [
+    "**/*.js",
+    "**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "build",
+    ".cache",
+    ".tmp"
+  ]
 }
