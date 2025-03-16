@@ -25,12 +25,13 @@
     "styled-components": "^6.0.0"
   },
   "devDependencies": {
+    "@types/node": "20.10.0",
     "@types/react": "18.3.18",
     "typescript": "5.3.3"
   },
   "engines": {
-    "node": ">=18.0.0 <=22.x.x",
-    "npm": ">=6.0.0"
+    "node": "20.11.1",
+    "npm": "10.2.4"
   },
   "strapi": {
     "uuid": "b870293b-2d89-4c39-bcba-cd3af62271df"
