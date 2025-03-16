@@ -24,7 +24,10 @@
     "react-router-dom": "^6.0.0",
     "styled-components": "^6.0.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@types/react": "18.3.18",
+    "typescript": "5.3.3"
+  },
   "engines": {
     "node": ">=18.0.0 <=22.x.x",
     "npm": ">=6.0.0"
