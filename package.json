@@ -4,13 +4,15 @@
   "private": true,
   "description": "A Strapi application",
   "scripts": {
-    "build": "strapi build",
+    "build": "NODE_ENV=production strapi build",
     "console": "strapi console",
     "deploy": "strapi deploy",
     "dev": "strapi develop",
     "develop": "strapi develop",
-    "start": "strapi start",
+    "start": "NODE_ENV=production strapi start",
     "strapi": "strapi",
+    "heroku-postbuild": "npm run build",
+    "postinstall": "npm run build",
     "upgrade": "npx @strapi/upgrade latest",
     "upgrade:dry": "npx @strapi/upgrade latest --dry"
   },
@@ -19,13 +21,15 @@
     "@strapi/plugin-users-permissions": "5.11.2",
     "@strapi/strapi": "5.11.2",
     "better-sqlite3": "11.3.0",
+    "pg": "^8.11.3",
+    "pg-connection-string": "^2.6.2",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.0.0",
     "styled-components": "^6.0.0"
   },
   "devDependencies": {
-    "@types/react": "^18.3.18",
+    "@types/react": "18.3.18",
     "typescript": "5.3.3"
   },
   "engines": {
