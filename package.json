@@ -33,5 +33,10 @@
   },
   "strapi": {
     "uuid": "93acd2ab-3142-44b4-861c-4af6a690f583"
-  }
+  },
+  "engines": {
+  "node": ">=20.17.0 <22.9.0",  // Node.js version range ko update kiya gaya
+  "npm": ">=6.0.0"              // npm version range ko bhi update kiya gaya
+}
+
 }
