@@ -1,11 +1,25 @@
 name: Deploy to Targetboard Web Server (Password Auth)
 
 on:
-  push:                                                                                                                                             branches:                                                                                                                                         - main                                                                                                                                                                                                                                                                                    jobs:                                                                                                                                             deploy:                                                                                                                                           runs-on: ubuntu-latest                                                                                                                                                                                                                                                                          container:                                                                                                                                        image: ubuntu:22.04                                                                                                                       
-    steps:                                                                                                                                            - name: Install dependencies                                                                                                                      run: |                                                                                                                                            apt update
-          apt install -y sshpass openssh-client git npm                                                                                                                                                                                                                                               - name: Run remote deploy commands via SSH                                                                                                        env:
-          SSH_PASSWORD: yu2iu9s00XWaMnf
-        run: |                                                                                                                                            sshpass -p "$SSH_PASSWORD" ssh -o StrictHostKeyChecking=no root@159.65.158.178 << 'EOF'
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y sshpass openssh-client git npm
+
+      - name: Run remote deploy commands via SSH
+        run: |
+          sshpass -p "yu2iu9s00XWaMnf" ssh -o StrictHostKeyChecking=no root@159.65.158.178 << 'EOF'
             cd /root/targetboard-webs
-            git pull                                                                                                                                        npm install
-            pm2 restart backend                                                                                                                           EOF 
+            git pull
+            npm install
+            pm2 restart backend
+          EOF
