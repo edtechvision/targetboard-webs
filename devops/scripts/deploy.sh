@@ -25,5 +25,8 @@ sshpass -p "$REMOTE_PASSWORD" ssh -tt -o StrictHostKeyChecking=no -o LogLevel=ER
 
   # Restart the backend using pm2
   pm2 restart backend
+  
+  exit 0
+  
 EOF
 
