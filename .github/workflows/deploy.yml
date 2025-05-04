@@ -13,13 +13,7 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y sshpass openssh-client git npm
+          sudo apt-get install -y sshpass openssh-client
 
       - name: Run remote deploy commands via SSH
-        run: |
-          sshpass -p "yu2iu9s00XWaMnf" ssh -o StrictHostKeyChecking=no root@159.65.158.178 << 'EOF'
-            cd /root/targetboard-webs
-            git pull
-            npm install
-            pm2 restart backend
-          EOF
+        run: bash devops/scripts/deploy.sh
