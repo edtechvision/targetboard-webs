@@ -10,6 +10,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout the repo
+        uses: actions/checkout@v3
+
       - name: Install dependencies
         run: |
           sudo apt-get update
@@ -17,3 +20,4 @@ jobs:
 
       - name: Run remote deploy commands via SSH
         run: bash devops/scripts/deploy.sh
+
