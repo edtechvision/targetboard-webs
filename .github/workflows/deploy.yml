@@ -1,9 +1,7 @@
 name: Deploy to Targetboard Web Server (Password Auth)
 
 on:
-  push:
-    branches:
-      - main
+  push: workflow_dispatch
 
 jobs:
   deploy:
